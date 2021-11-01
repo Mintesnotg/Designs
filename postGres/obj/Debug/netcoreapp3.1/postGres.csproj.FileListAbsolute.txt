@@ -132,3 +132,5 @@ C:\Users\Mz\source\repos\postGres\postGres\obj\Debug\netcoreapp3.1\postGres.genr
 C:\Users\Mz\source\repos\postGres\postGres\obj\Debug\netcoreapp3.1\postGres.csproj.AssemblyReference.cache
 C:\Users\Mz\source\repos\postGres\postGres\obj\Debug\netcoreapp3.1\Razor\Views\Students\AlterStudent.cshtml.g.cs
 C:\Users\Mz\source\repos\postGres\postGres\obj\Debug\netcoreapp3.1\Razor\Views\Students\Index.cshtml.g.cs
+C:\Users\Mz\source\repos\postGres\postGres\obj\Debug\netcoreapp3.1\Razor\Views\Teachers\AlterTeacher.cshtml.g.cs
+C:\Users\Mz\source\repos\postGres\postGres\obj\Debug\netcoreapp3.1\Razor\Views\Teachers\Index.cshtml.g.cs

@@ -1,0 +1,47 @@
+﻿@using postGres.View_Models
+@model List<TeachersModel>
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Teachers";
+}
+
+
+    
+    <form class="my-2" method="post" enctype="multipart/form-data" asp-controller="Teachers" asp-action="addTeacher">
+        Name:<input class="form-control-sm d-inline-block" asp-for="@Model.FirstOrDefault().name" value="" />
+        Department:<input class="form-control-sm d-inline-block" asp-for="@Model.FirstOrDefault().department" value="" />
+        Section:<input class="form-control-sm d-inline-block" asp-for="@Model.FirstOrDefault().section" value="" />
+        <input class=" btn-sm btn-primary d-inline-block" type="submit" value="Add Teacher" />
+        <hr />
+    </form>
+
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Section</th>
+                <th colspan="2">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (TeachersModel teacher in Model)
+            {
+                <tr>
+                    <td>@teacher.name</td>
+                    <td>@teacher.department</td>
+                    <td>@teacher.section</td>
+                    <td>
+                        <form asp-action="AlterTeacher" asp-controller="Teachers" method="post" enctype="multipart/form-data">
+                            <input type="hidden" asp-for="@Model.FirstOrDefault().id" value="@teacher.id" />
+                            <input type="hidden" asp-for="@Model.FirstOrDefault().name" value="@teacher.name"/>
+                            <input type="hidden" asp-for="@Model.FirstOrDefault().department" value="@teacher.department"/>
+                            <input type="hidden" asp-for="@Model.FirstOrDefault().section" value="@teacher.section"/>
+                            <input type="submit" name="Edit" class="btn-sm btn-primary" value="Edit" />
+                            <input type="submit" name="Delete" class="btn-sm btn-danger" value="Delete" />
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>

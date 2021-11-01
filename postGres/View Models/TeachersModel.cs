@@ -7,6 +7,7 @@ namespace postGres.View_Models
 {
     public class TeachersModel
     {
+        public int id { get; set; }
         public string name { get; set; }
         public string department { get; set; }
         public string section { get; set; }

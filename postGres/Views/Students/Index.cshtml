@@ -1,19 +1,11 @@
 ﻿@using postGres.View_Models
 @model List<StudentsModel>
 @{
-    Layout = null;
+    Layout = "_Layout";
+    ViewData["Title"] = "Students";
 }
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>ShowStudents</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
-</head>
-<body>
     
     <form class="my-2" method="post" enctype="multipart/form-data" asp-controller="Students" asp-action="addStudent">
         Name:<input class="form-control-sm d-inline-block" asp-for="@Model.FirstOrDefault().name" value="" />
@@ -50,8 +42,3 @@
         </tbody>
     </table>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-</body>
-</html>

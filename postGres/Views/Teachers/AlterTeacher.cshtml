@@ -1,8 +1,8 @@
 ﻿@using postGres.View_Models
-@model StudentsModel
+@model TeachersModel
 @{
     Layout = "_Layout";
-    ViewData["Title"] = "Alter Students";
+    ViewData["Title"] = "Alter Teachers";
 }
 
 
@@ -10,10 +10,11 @@
         <tbody>
             <tr>
                 <td>
-                    <form asp-action="UpdateStudent" asp-controller="Students" method="post" enctype="multipart/form-data">
+                    <form asp-action="UpdateTeacher" asp-controller="Teachers" method="post" enctype="multipart/form-data">
                         <input type="hidden" asp-for="@Model.id" value="@Model.id" />
                         <input class="form-control-sm d-inline-block" asp-for="@Model.name" value="@Model.name" />
                         <input class="form-control-sm d-inline-block" asp-for="@Model.department" value="@Model.department" />
+                        <input class="form-control-sm d-inline-block" asp-for="@Model.section" value="@Model.section" />
                         <input type="submit" class="btn-sm btn-primary" value="Update" />
                         <input type="button" onclick="history.back()" class="btn-sm btn-info" value="Cancel" />
                     </form>
