@@ -6,6 +6,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using postGres.Models;
+using postGres.Services.Concrete;
+using postGres.Services.Interface;
+using postGres.Services.Process_Manager;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +30,9 @@ namespace postGres
         {
             services.AddControllersWithViews();
             services.AddEntityFrameworkNpgsql().AddDbContext<PContext>(optionsAction: opt => opt.UseNpgsql(Configuration.GetConnectionString(name: "default")));
+            services.AddAutoMapper(typeof(Startup));
+            services.AddScoped<IStudent,StudentImplementation>();
+            services.AddScoped<StudentPM>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

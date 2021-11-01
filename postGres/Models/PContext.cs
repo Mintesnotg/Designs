@@ -9,6 +9,8 @@ namespace postGres.Models
     public class PContext : DbContext
     {
         public PContext (DbContextOptions<PContext> options) : base(options) { }
-        public DbSet<first> firsts { get; set; }
+        public DbSet<Students> students { get; set; }
+        public DbSet<Teachers> teachers { get; set; }
     }
+    
 }

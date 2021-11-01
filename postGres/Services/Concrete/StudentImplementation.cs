@@ -1,0 +1,38 @@
+﻿using postGres.Models;
+using postGres.Services.Interface;
+using postGres.View_Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace postGres.Services.Concrete
+{
+    public class StudentImplementation : IStudent
+    {
+        private readonly PContext context;
+
+        public StudentImplementation(PContext _context)
+        {
+            context = _context;
+        }
+        public async Task insertStudent(Students student) {
+           await Task.Run( () => context.students.Add(student));
+           context.SaveChanges();
+        }
+        public async Task updateStudent(Students student) {
+            await Task.Run(() => context.students.Update(student));
+            context.SaveChanges();
+        }
+        public async Task deleteStudent(Students student) {
+            await Task.Run(() => context.students.Remove(student));
+            context.SaveChanges();
+        }
+        public async Task<Students> getStudent(int id) {
+            return await Task.Run(() => context.students.Where(student => student.id == id).FirstOrDefault());
+        }
+        public async Task<List<Students>> getStudent() {
+            return await Task.Run(() => context.students.ToList());
+        }
+    }
+}

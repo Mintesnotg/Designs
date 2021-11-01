@@ -12,21 +12,16 @@ namespace postGres.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly PContext context;
 
-        public HomeController(ILogger<HomeController> logger, PContext _context)
+        public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
-            context = _context;
         }
 
-        public  IActionResult Index()
+        public IActionResult Index()
         {
-            context.firsts.Add(new first("namee", false));
-            context.SaveChanges();
-            //List<first> firsts= Task.Run(()=>  context.firsts.Where(a => a.isNull == false).ToList());
-            List<first> firsts=  context.firsts.Where(a => a.isNull == false).ToList();
-            return View(firsts);
+            
+            return View();
         }
 
         public IActionResult Privacy()

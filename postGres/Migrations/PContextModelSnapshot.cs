@@ -18,22 +18,43 @@ namespace postGres.Migrations
                 .HasAnnotation("ProductVersion", "5.0.11")
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-            modelBuilder.Entity("postGres.Models.first", b =>
+            modelBuilder.Entity("postGres.Models.Students", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<bool>("isNull")
-                        .HasColumnType("boolean");
+                    b.Property<string>("department")
+                        .HasColumnType("text");
 
                     b.Property<string>("name")
                         .HasColumnType("text");
 
                     b.HasKey("id");
 
-                    b.ToTable("firsts");
+                    b.ToTable("students");
+                });
+
+            modelBuilder.Entity("postGres.Models.Teachers", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<string>("department")
+                        .HasColumnType("text");
+
+                    b.Property<string>("name")
+                        .HasColumnType("text");
+
+                    b.Property<string>("section")
+                        .HasColumnType("text");
+
+                    b.HasKey("id");
+
+                    b.ToTable("teachers");
                 });
 #pragma warning restore 612, 618
         }

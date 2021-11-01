@@ -1,0 +1,37 @@
+﻿@using postGres.View_Models
+@model StudentsModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EditStudent</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <table class=" table">
+        <tbody>
+            <tr>
+                <td>
+                    <form asp-action="UpdateStudent" asp-controller="Students" method="post" enctype="multipart/form-data">
+                        <input type="hidden" asp-for="@Model.id" value="@Model.id" />
+                        <input class="form-control-sm d-inline-block" asp-for="@Model.name" value="@Model.name" />
+                        <input class="form-control-sm d-inline-block" asp-for="@Model.department" value="@Model.department" />
+                        <input type="submit" class="btn-sm btn-primary" value="Update" />
+                        <input type="button" onclick="history.back()" class="btn-sm btn-info" value="Cancel" />
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>
