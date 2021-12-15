@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mz\\source\\repos\\postGres\\postGres\\postGres.csproj": {}
+    "C:\\Users\\hp\\Desktop\\design\\postGres\\postGres.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mz\\source\\repos\\postGres\\postGres\\postGres.csproj": {
+    "C:\\Users\\hp\\Desktop\\design\\postGres\\postGres.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mz\\source\\repos\\postGres\\postGres\\postGres.csproj",
+        "projectUniqueName": "C:\\Users\\hp\\Desktop\\design\\postGres\\postGres.csproj",
         "projectName": "postGres",
-        "projectPath": "C:\\Users\\Mz\\source\\repos\\postGres\\postGres\\postGres.csproj",
-        "packagesPath": "C:\\Users\\Mz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mz\\source\\repos\\postGres\\postGres\\obj\\",
+        "projectPath": "C:\\Users\\hp\\Desktop\\design\\postGres\\postGres.csproj",
+        "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hp\\Desktop\\design\\postGres\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Mz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -50,6 +50,10 @@
               "target": "Package",
               "version": "[5.0.11, )"
             },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -83,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

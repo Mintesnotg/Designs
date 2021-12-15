@@ -12,38 +12,38 @@ namespace postGres.Services.Process_Manager
 {
     public class StudentPM
     {
-        private readonly IStudent students;
+        private readonly IStudent _students;
         private readonly IMapper mapper;
 
-        public  StudentPM(IStudent _students,IMapper _mapper)
+        public  StudentPM(IStudent _student,IMapper _mapper)
         {
-            students = _students;
+            _students = _student;
             mapper = _mapper;
 
         }
         public async Task insertStudent(StudentsModel studentToInsert)
         {
-            Students student = mapper.Map<Students>(studentToInsert);
-            await students.insertStudent(student);
+            var student= mapper.Map<Students>(studentToInsert);
+            await _students.insertStudent(student);
         }
         public async Task updateStudent(StudentsModel studentToUpdate)
         {
             Students student = mapper.Map<Students>(studentToUpdate);
-            await students.updateStudent(student);
+            await _students.updateStudent(student);
         }
         public async Task deleteStudent(StudentsModel studentToDelete)
         {
             Students student = mapper.Map<Students>(studentToDelete);
-            await students.deleteStudent(student);
+            await _students.deleteStudent(student);
 
         }
         public async Task<StudentsModel> getStudent(int studentId)
         {
-            return mapper.Map<StudentsModel>(await students.getStudent(studentId));
+            return mapper.Map<StudentsModel>(await _students.getStudent(studentId));
         }
         public async Task<List<StudentsModel>> getStudent()
         {
-            return mapper.Map<List<StudentsModel>>(await students.getStudent());
+            return mapper.Map<List<StudentsModel>>(await _students.getStudent());
         }
 
     }

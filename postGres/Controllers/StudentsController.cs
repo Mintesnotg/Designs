@@ -19,7 +19,7 @@ namespace postGres.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            List<StudentsModel> students=await _studentProcessManager.getStudent();
+          var students=await _studentProcessManager.getStudent();
             return View(students);
         }
 

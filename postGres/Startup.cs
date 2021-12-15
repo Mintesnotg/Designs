@@ -30,7 +30,9 @@ namespace postGres
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddEntityFrameworkNpgsql().AddDbContext<PContext>(optionsAction: opt => opt.UseNpgsql(Configuration.GetConnectionString(name: "default")));
+            services.AddDbContext<PContext>(options =>
+options.UseSqlServer(Configuration.GetConnectionString("default")));
+            //services.AddEntityFrameworkNpgsql().AddDbContext<PContext>(optionsAction: opt => opt.UseNpgsql(Configuration.GetConnectionString(name: "default")));
             services.AddAutoMapper(typeof(Startup));
             services.AddScoped<IStudent,StudentImplementation>();
             services.AddScoped<ITeacher,TeacherImplementation>();
