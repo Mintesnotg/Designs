@@ -31,7 +31,7 @@ namespace postGres
         {
             services.AddControllersWithViews();
             services.AddDbContext<PContext>(options =>
-options.UseSqlServer(Configuration.GetConnectionString("default")));
+options.UseSqlServer(Configuration.GetConnectionString("Design_Db")));
             //services.AddEntityFrameworkNpgsql().AddDbContext<PContext>(optionsAction: opt => opt.UseNpgsql(Configuration.GetConnectionString(name: "default")));
             services.AddAutoMapper(typeof(Startup));
             services.AddScoped<IStudent,StudentImplementation>();
