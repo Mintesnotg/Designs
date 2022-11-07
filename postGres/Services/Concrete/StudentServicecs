@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace postGres.Services.Concrete
 {
-    public class StudentImplementation : IStudent
+    public class StudentServicecs : IStudent
     {
         private readonly PContext context;
 
-        public StudentImplementation(PContext _context)
+        public StudentServicecs(PContext _context)
         {
             context = _context;
         }
